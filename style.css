@@ -1,0 +1,70 @@
+:root{
+    --color-secondary: #E2CBAD;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-secondary);
+    width: 100%;
+    min-height:100vh ;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+#arrow{
+    display: none;
+}
+
+#chicken_game{
+    display: none;
+}
+path#chicken{
+    --value: 1600;
+    stroke-dasharray: var(--value);
+    /* stroke-dashoffset: var(--value); */
+    animation: animate 5s cubic-bezier(1,.01,.83,.67) forwards;
+}
+
+
+#dont_look{
+    display: none;    
+}
+
+
+#game_over{
+    display: none;
+}
+
+path{
+    fill: none;
+    stroke: black;
+}
+
+@keyframes animate{
+    0%{
+        stroke-dashoffset: var(--value);
+        opacity: 0;
+    }
+    30%{
+        stroke-dashoffset: var(--value);
+        opacity: 1;
+        fill: rgba(0, 0, 0, 0);
+
+    }
+    90%{
+        stroke-dashoffset: 0;
+        opacity: 1;
+        fill: rgba(0, 0, 0, 0.3);
+
+
+    }
+    100%{
+        stroke-dashoffset: 0;
+        opacity: 1;
+        fill: rgba(0, 0, 0, 0.5);
+        
+
+    }
+}
