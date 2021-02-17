@@ -1,5 +1,8 @@
 window.addEventListener("DOMContentLoaded", init());
-
+function toggleTween(tween) {
+    tween.reversed() ? tween.play() : tween.reverse()
+    console.log(tween.reversed())
+}
 function init() {
   let value = 1600;
   gsap.set("path", { fill: "rgba(0,0,0,0)" });
@@ -21,7 +24,7 @@ function init() {
   });
 
 
-  document.querySelector("button").addEventListener("click", ()=> chicken_timeline.play())
+  document.querySelector("button").addEventListener("click", ()=> toggleTween(chicken_timeline))
   chicken_timeline
 
     .to("#chicken_game", { y: 0, autoAlpha: 1 })
