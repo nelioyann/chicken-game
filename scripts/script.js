@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", init());
 function toggleTween(tween) {
     tween.reversed() ? tween.play() : tween.reverse()
-    console.log(tween.reversed())
+    // console.log(tween.reversed())
 }
 function init() {
   let value = 1600;
@@ -16,15 +16,17 @@ function init() {
   gsap.set("#chicken_game path", {y: 50, autoAlpha: 0 });
 
   gsap.timeline()
-    .to("#chicken_game path", {y: 0, autoAlpha: 1, duration: 1.5, stagger: 0.3, ease: "back.out" })
-    .to("#chicken_game path", { fill: "black",duration:0.3, stagger: 0.3, ease: "back.out"  });
+    .to("#chicken_game path", {y: 0, autoAlpha: 1, duration: 1, stagger: 0.3, ease: "back.out" })
+    .to("#chicken_game path", { fill: "black",duration:0.3, stagger: 0.1, ease: "back.out"  })
+    .from(".trigger", {autoAlpha: 0, ease: "bounce.out", y: -50})
   const chicken_timeline = gsap.timeline({
     paused: true,
+    reversed: true,
     defaults: { duration: 1.2, ease: "power1.out" },
   });
 
 
-  document.querySelector("button").addEventListener("click", ()=> toggleTween(chicken_timeline))
+  document.querySelector(".trigger").addEventListener("click", ()=> toggleTween(chicken_timeline));
   chicken_timeline
 
     .to("#chicken_game", { y: 0, autoAlpha: 1 })
@@ -57,7 +59,7 @@ function init() {
     .to("#arrow path", { autoAlpha: 1 })
 
     .to("#chicken", { fill: "rgba(0,0,0,1)" })
-    .to("#dont_look path", { y: 0, autoAlpha: 1, duration: 1 }, "-=1")
+    .to("#dont_look path", { y: 0, autoAlpha: 1, duration: 1, ease: "bounce.out" }, "-=1")
     .to(["#dont_look path", "#game_over path"], { fill: "#000" })
-    .to("#game_over path", { y: 0, autoAlpha: 1 });
+    .to("#game_over path", { y: 0, autoAlpha: 1, ease: "bounce.out" });
 }
