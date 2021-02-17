@@ -36,7 +36,7 @@ function init() {
         {
           strokeDashoffset: value,
           opacity: 0,
-          duration: 1,
+          duration: 0.3,
         },
         {
           strokeDashoffset: value,
