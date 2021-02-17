@@ -16,6 +16,10 @@ body{
     display: grid;
     place-items: center;
 }
+.chicken_wrapper{
+    display: flex;
+    flex-direction: column;
+}
 
 #arrow{
     /* display: none; */
@@ -45,6 +49,8 @@ path#chicken{
 path{
     /* fill: none; */
     stroke: black;
+    /* visibility: hidden; */
+    opacity: 0;
 }
 
 @keyframes animate{
