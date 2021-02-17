@@ -5,7 +5,11 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: var(--color-secondary);
+    /* background-color: var(--color-secondary); */
+    background-image: url("./images/bg.jpg");
+    background-size: contain;
+    background-repeat: repeat;
+    
     width: 100%;
     min-height:100vh ;
     overflow: hidden;
@@ -14,31 +18,32 @@ body{
 }
 
 #arrow{
-    display: none;
+    /* display: none; */
 }
 
 #chicken_game{
-    display: none;
+    /* display: none; */
 }
 path#chicken{
     --value: 1600;
-    stroke-dasharray: var(--value);
+    opacity: 0;
+    /* stroke-dasharray: var(--value); */
     /* stroke-dashoffset: var(--value); */
-    animation: animate 5s cubic-bezier(1,.01,.83,.67) forwards;
+    /* animation: animate 5s cubic-bezier(1,.01,.83,.67) forwards; */
 }
 
 
 #dont_look{
-    display: none;    
+    /* display: none;     */
 }
 
 
 #game_over{
-    display: none;
+    /* display: none; */
 }
 
 path{
-    fill: none;
+    /* fill: none; */
     stroke: black;
 }
 
